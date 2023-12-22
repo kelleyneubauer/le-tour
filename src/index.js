@@ -32,7 +32,11 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import Masher from "./components/Masher";
-import Another from "./Another";
+import Puzzle from "./components/Puzzle";
+import Math from "./components/Math";
+import Trivia from "./components/Trivia";
+import Balloons from "./components/Balloons";
+import Wordle from "./components/Wordle/Wordle";
 
 const router = createHashRouter([
   {
@@ -44,20 +48,24 @@ const router = createHashRouter([
     element: <Masher />,
   },
   {
-    path: "/riddle",
-    element: <Another />,
-  },
-  {
     path: "/puzzle",
-    element: <Another />,
+    element: <Puzzle />,
   },
   {
-    path: "/wordle",
-    element: <Another />,
+    path: "/trivia",
+    element: <Trivia />,
   },
   {
     path: "/math",
-    element: <Another />,
+    element: <Math />,
+  },
+  {
+    path: "/balloons",
+    element: <Balloons />,
+  },
+  {
+    path: "/wordle",
+    element: <Wordle />,
   },
 ]);
 
