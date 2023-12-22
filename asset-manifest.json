@@ -1,16 +1,13 @@
 {
   "files": {
     "main.css": "/le-tour/static/css/main.f855e6bc.css",
-    "main.js": "/le-tour/static/js/main.e8e1bd01.js",
-    "static/js/787.02014a71.chunk.js": "/le-tour/static/js/787.02014a71.chunk.js",
-    "static/media/logo.svg": "/le-tour/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.js": "/le-tour/static/js/main.2183eb0e.js",
     "index.html": "/le-tour/index.html",
     "main.f855e6bc.css.map": "/le-tour/static/css/main.f855e6bc.css.map",
-    "main.e8e1bd01.js.map": "/le-tour/static/js/main.e8e1bd01.js.map",
-    "787.02014a71.chunk.js.map": "/le-tour/static/js/787.02014a71.chunk.js.map"
+    "main.2183eb0e.js.map": "/le-tour/static/js/main.2183eb0e.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.e8e1bd01.js"
+    "static/js/main.2183eb0e.js"
   ]
 }
