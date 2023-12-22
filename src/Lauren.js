@@ -1,15 +1,15 @@
 import './App.css';
 
-function App() {
+function Lauren() {
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          LE TOUR
+          LAUREN IS HOT
         </p>
       </header>
     </div>
   );
 }
 
-export default App;
+export default Lauren;
