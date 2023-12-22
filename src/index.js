@@ -27,15 +27,12 @@
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import './index.css';
-import {
-  createHashRouter,
-  RouterProvider,
-} from "react-router-dom";
+import "./index.css";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
-import App from './App';
-import Lauren from './Lauren';
-import Another from './Another';
+import App from "./App";
+import Masher from "./components/Masher";
+import Another from "./Another";
 
 const router = createHashRouter([
   {
@@ -43,11 +40,23 @@ const router = createHashRouter([
     element: <App />,
   },
   {
-    path: "/lauren",
-    element: <Lauren />,
+    path: "/masher",
+    element: <Masher />,
   },
   {
-    path: "/another",
+    path: "/riddle",
+    element: <Another />,
+  },
+  {
+    path: "/puzzle",
+    element: <Another />,
+  },
+  {
+    path: "/wordle",
+    element: <Another />,
+  },
+  {
+    path: "/math",
     element: <Another />,
   },
 ]);
