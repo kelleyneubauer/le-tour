@@ -35,6 +35,7 @@ import {
 
 import App from './App';
 import Lauren from './Lauren';
+import Another from './Another';
 
 const router = createHashRouter([
   {
@@ -44,6 +45,10 @@ const router = createHashRouter([
   {
     path: "/lauren",
     element: <Lauren />,
+  },
+  {
+    path: "/another",
+    element: <Another />,
   },
 ]);
 
