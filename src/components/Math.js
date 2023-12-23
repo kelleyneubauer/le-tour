@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { TextField, DefaultButton } from "@fluentui/react";
+import {
+  TextField,
+  DefaultButton,
+  Separator,
+  Dialog,
+  DialogFooter,
+} from "@fluentui/react";
 
 const questions = {
   1: "purple circle",
@@ -23,10 +29,16 @@ const answers = {
 function Math() {
   const [inputText, setInputText] = useState("");
   const [currentProblem, setCurrentProblem] = useState(1);
+  const [isDialogHidden, setDialogHidden] = useState(true);
+  const [dialogText, setDialogText] = useState("");
 
   const handleChange = (event, newValue) => {
     setInputText(newValue);
   };
+
+  function closeDialog() {
+    setDialogHidden(true);
+  }
 
   const handleSubmit = () => {
     if (inputText === answers[currentProblem]) {
@@ -35,11 +47,12 @@ function Math() {
         currentProblem === Object.keys(answers).length
           ? "shy guy says\nWINNER!\nWINNER!\nWINNER!"
           : "good!";
-      alert(alertText);
+      setDialogText(alertText);
       setCurrentProblem(currentProblem + 1);
     } else {
-      alert("try again");
+      setDialogText("try again");
     }
+    setDialogHidden(false);
   };
 
   return (
@@ -47,8 +60,9 @@ function Math() {
       <p>SHY GUY SAYS</p>
       <p>Solve all problems. Round up if necessary</p>
       <p>Screenshot the WINNER! alert and show Kelley</p>
+      <Separator />
+      <p>{questions[currentProblem]}</p>
       <TextField
-        label={questions[currentProblem]}
         value={inputText}
         onChange={handleChange}
         styles={{
@@ -62,6 +76,20 @@ function Math() {
         onClick={handleSubmit}
         style={{ marginTop: "10px" }}
       />
+      {!isDialogHidden && (
+        <Dialog
+          hidden={isDialogHidden}
+          onDismiss={closeDialog}
+          dialogContentProps={{
+            title: "Trivia",
+            subText: dialogText,
+          }}
+        >
+          <DialogFooter>
+            <DefaultButton onClick={closeDialog} text="Ok" />
+          </DialogFooter>
+        </Dialog>
+      )}
     </div>
   );
 }

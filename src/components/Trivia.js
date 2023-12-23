@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { TextField, DefaultButton } from "@fluentui/react";
+import {
+  TextField,
+  DefaultButton,
+  Separator,
+  Dialog,
+  DialogFooter,
+} from "@fluentui/react";
 
 const questions = {
   1: "The process of aging wine in barrels is known as __________",
@@ -20,6 +26,12 @@ function Trivia() {
   const [inputText, setInputText] = useState("");
   const [currentProblem, setCurrentProblem] = useState(1);
   const [guessNumber, setGuessNumber] = useState(1);
+  const [isDialogHidden, setDialogHidden] = useState(true);
+  const [dialogText, setDialogText] = useState("");
+
+  function closeDialog() {
+    setDialogHidden(true);
+  }
 
   const handleChange = (event, newValue) => {
     setInputText(newValue);
@@ -30,19 +42,20 @@ function Trivia() {
       setInputText("");
       const alertText =
         currentProblem === Object.keys(answers).length
-          ? "trivia\nWINNER!\nWINNER!\nWINNER!"
+          ? "WINNER! WINNER! WINNER!"
           : "good!";
-      alert(alertText);
+      setDialogText(alertText);
       setCurrentProblem(currentProblem + 1);
       setGuessNumber(1);
     } else {
       const alertText =
         guessNumber % 2 === 0
-          ? "try again\n\nNeed a hint?\nText my AI LLM, Little Lan Man\n(206)-619-LANS"
+          ? "Try again. Need a hint? Text my AI LLM, Little Lan Man: (206)-619-LANS"
           : "try again";
-      alert(alertText);
+      setDialogText(alertText);
       setGuessNumber(guessNumber + 1);
     }
+    setDialogHidden(false);
   };
 
   return (
@@ -50,13 +63,22 @@ function Trivia() {
       <p>TRIVIA</p>
       <p>Answer all questions</p>
       <p>Screenshot the WINNER! alert and show Kelley</p>
+      <Separator />
+      <p>{questions[currentProblem]}</p>
       <TextField
-        label={questions[currentProblem]}
         value={inputText}
         onChange={handleChange}
         styles={{
           fieldGroup: {
             width: 300,
+          },
+          subComponentStyles: {
+            label: {
+              root: {
+                // Styles for the label
+                alignSelf: "center", // Center the label
+              },
+            },
           },
         }}
       />
@@ -65,6 +87,20 @@ function Trivia() {
         onClick={handleSubmit}
         style={{ marginTop: "10px" }}
       />
+      {!isDialogHidden && (
+        <Dialog
+          hidden={isDialogHidden}
+          onDismiss={closeDialog}
+          dialogContentProps={{
+            title: "Trivia",
+            subText: dialogText,
+          }}
+        >
+          <DialogFooter>
+            <DefaultButton onClick={closeDialog} text="Ok" />
+          </DialogFooter>
+        </Dialog>
+      )}
     </div>
   );
 }
