@@ -45,7 +45,7 @@ function Math() {
       setInputText("");
       const alertText =
         currentProblem === Object.keys(answers).length
-          ? "shy guy says\nWINNER!\nWINNER!\nWINNER!"
+          ? "WINNER! WINNER! WINNER!"
           : "good!";
       setDialogText(alertText);
       setCurrentProblem(currentProblem + 1);
@@ -81,7 +81,7 @@ function Math() {
           hidden={isDialogHidden}
           onDismiss={closeDialog}
           dialogContentProps={{
-            title: "Trivia",
+            title: "Shy Guy Says",
             subText: dialogText,
           }}
         >
