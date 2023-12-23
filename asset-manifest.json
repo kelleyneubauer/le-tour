@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/le-tour/static/css/main.fc138938.css",
-    "main.js": "/le-tour/static/js/main.baaafbdc.js",
+    "main.js": "/le-tour/static/js/main.3469840d.js",
     "index.html": "/le-tour/index.html",
     "main.fc138938.css.map": "/le-tour/static/css/main.fc138938.css.map",
-    "main.baaafbdc.js.map": "/le-tour/static/js/main.baaafbdc.js.map"
+    "main.3469840d.js.map": "/le-tour/static/js/main.3469840d.js.map"
   },
   "entrypoints": [
     "static/css/main.fc138938.css",
-    "static/js/main.baaafbdc.js"
+    "static/js/main.3469840d.js"
   ]
 }
