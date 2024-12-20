@@ -36,39 +36,41 @@ import Puzzle from "./components/Puzzle";
 import Math from "./components/Math";
 import Trivia from "./components/Trivia";
 import Balloons from "./components/Balloons";
-import Wordle from "./components/Wordle/Wordle";
+// import Wordle from "./components/Wordle/Wordle";
+// import Wordle from "./components/WordleLib/Wordle";
+// import WordleLibWrapper from "./components/WordleLib/WordleLibWrapper";
 
 const router = createHashRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/masher",
-    element: <Masher />,
-  },
-  {
-    path: "/puzzle",
-    element: <Puzzle />,
-  },
-  {
-    path: "/trivia",
-    element: <Trivia />,
-  },
-  {
-    path: "/math",
-    element: <Math />,
-  },
-  {
-    path: "/balloons",
-    element: <Balloons />,
-  },
-  {
-    path: "/wordle",
-    element: <Wordle />,
-  },
+    {
+        path: "/",
+        element: <App />,
+    },
+    {
+        path: "/masher",
+        element: <Masher />,
+    },
+    {
+        path: "/puzzle",
+        element: <Puzzle />,
+    },
+    {
+        path: "/trivia",
+        element: <Trivia />,
+    },
+    {
+        path: "/math",
+        element: <Math />,
+    },
+    {
+        path: "/balloons",
+        element: <Balloons />,
+    },
+    {
+        path: "/wordle",
+        // element: <WordleLibWrapper />,
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+    <RouterProvider router={router} />
 );
